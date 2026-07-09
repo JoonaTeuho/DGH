@@ -2,6 +2,8 @@ extends CanvasLayer
 
 signal start_game
 
+var Difficulty = 0
+
 func show_message(text):
 	$Message.text = text
 	$Message.show()
@@ -23,7 +25,12 @@ func update_HP(HP):
 	
 func _on_start_button_pressed():
 	$StartButton.hide()
+	$Difficulty.hide()
 	start_game.emit()
 
 func _on_message_timer_timeout():
 	$Message.hide()
+
+
+func _on_difficulty_item_selected(index: int):
+	Difficulty = index

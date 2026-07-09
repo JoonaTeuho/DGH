@@ -56,5 +56,22 @@ size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_b3bc3")
 theme_override_font_sizes/font_size = 64
 
+[node name="Difficulty" type="OptionButton" parent="."]
+offset_left = 140.0
+offset_top = 420.0
+offset_right = 340.0
+offset_bottom = 520.0
+alignment = 1
+selected = 0
+allow_reselect = true
+item_count = 3
+popup/item_0/text = "Select difficulty"
+popup/item_0/id = 0
+popup/item_1/text = "Easy"
+popup/item_1/id = 1
+popup/item_2/text = "Hard"
+popup/item_2/id = 2
+
 [connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="item_selected" from="Difficulty" to="." method="_on_difficulty_item_selected"]
